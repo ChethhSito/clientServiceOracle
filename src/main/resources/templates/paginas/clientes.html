@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="Juan" content="Java" />
+    <title>Clientes</title>
+    <script src="/js/clientes.js"></script>
+    <link rel="stylesheet" href="/css/tablaClientes.css">
+</head>
+<body>
+     <!-- header para las dos tablas  -->
+    <header>
+        <nav class="nav-header">
+            <ul class="ultablas">
+                <li><a href="/clientes">Clientes</a></li>
+                <li><a href="http://localhost:8082/direcciones">Direcciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- tablas   -->
+    <main class="main-tablas">
+        <!-- nav para Crear - Read - Update - Delete  -->
+         <nav class="navcrud">
+        <ul class="ulcrud">
+            <li><a href="/agregarCliente">Agregar</a></li>
+            <li><a href="/editarCliente">Editar</a></li>
+            <li><a href="">Eliminar</a></li>
+            
+        </ul>
+        </nav>
+        <section>
+            <h1>Clientes</h1>
+            <div class="tabla-contenedor">
+                <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre Completo</th>
+                        <th>Dni</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                        <th>Fecha Registro</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="cliente_table"></tbody>
+            </table>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

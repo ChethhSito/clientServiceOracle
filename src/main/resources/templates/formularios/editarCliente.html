@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="Juan" content="Java" />
+    <title>Agregar Cliente</title>
+    
+    <link rel="stylesheet" href="/css/editCli.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-header">
+            <ul class="ultablas">
+                <li><a href="/clientes">Clientes</a></li>
+                <li><a href="http://localhost:8082/direcciones">Direcciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-tablas">
+        <nav class="navcrud">
+            <ul class="ulcrud">
+                <li><a href="/agregarCliente">Agregar</a></li>
+                <li><a href="/editarCliente">Editar</a></li>
+                <li><a href="">Eliminar</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h1>Editar Cliente</h1>
+            <div class="filtro">
+                <label for="id">Registre el id de su cliente</label>
+                <input type="text" id="clienteRefe" name="id" required>
+            </div>
+            <div class="btns">
+                <button class="add" type="button" id="btnRegistrarId">Registrar ID</button>
+            </div>
+
+            <div class="form-cont">
+            <form id="clienteForm" method="put"style="display: none;" >
+
+                <div class="form-group">
+                    <label for="nombreCompleto">Nombre Completo:</label>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+                 </div>
+
+                <div class="form-group">
+                    <label for="dni">DNI:</label>
+                    <input type="text" id="dni" name="dni" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Telefono:</label>
+                    <input type="text" id="telefono" name="telefono">
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaRegistro">Fecha Registro:</label>
+                    <input class="fechas" type="date" id="fechaRegistro" name="fechaRegistro" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <select id="estado" name="estado" required>
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
+
+                <button class="add"  type="submit">Agregar Cliente</button>
+            </form>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="/js/editClie.js"></script>
+    <footer></footer>
