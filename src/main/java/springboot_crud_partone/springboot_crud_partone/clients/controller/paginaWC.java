@@ -17,6 +17,10 @@ public class paginaWC {
     public String EditCliente() {
         return "formularios/editarCliente";
     }
+    @GetMapping("/eliminarCliente")
+    public String DeleteCliente() {
+        return "formularios/eliminarCliente";
+    }
     @GetMapping("/bienvenida")
     public String PageWelcome() {
         return "paginas/bienvenida";
