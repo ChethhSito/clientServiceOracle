@@ -12,9 +12,9 @@ fetch('api/clients')
             <td>${cliente.nombreCompleto}</td>
             <td>${cliente.dni}</td>
             <td>${cliente.correoElectronico}</td>
-            <td>${cliente.telefono}</td>
             <td>${fecha}</td>
-            <td>${cliente.estado}</td>`;
+            <td>${cliente.estado}</td>
+            <td>${cliente.telefono}</td>`;
             tbody.appendChild(fila);
     });}).catch(error => {
     console.error('Error fetching clientes:', error);
