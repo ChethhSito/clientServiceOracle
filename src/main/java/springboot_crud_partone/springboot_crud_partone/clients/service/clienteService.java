@@ -20,15 +20,24 @@ public class clienteService {
     }
     @Transactional(readOnly = true)
     public List<clients> getAllClients() {
+        try {
         return clientRepository.obtenerTodosClientes();
+        } catch (Exception e) {
+            throw new RuntimeException("Error al obtener los clientes", e);
+        }
     }
     @Transactional(readOnly = true)
     public clients getClientById(Long id) {
-        return clientRepository.obtenerClientePorId(id);
+        try {
+            return clientRepository.obtenerClientePorId(id);
+        } catch (Exception e) {
+             throw new RuntimeException("Error al obtener cliente por id", e);
+        }
     }
    @Transactional(readOnly = true)
     public void inserClients(clients client) {
         //lamas al procedimiento de insert los parametros deben estar en el mismo orden que en la base de datos
+        try{
         clientRepository.insertarCliente(
             client.getNombreCompleto(), 
             client.getDni(), 
@@ -36,6 +45,10 @@ public class clienteService {
             client.getTelefono(), 
             client.getEstado(), 
             client.getFechaRegistro());
+        }
+        catch (Exception e) {
+             throw new RuntimeException("Error al insertar cliente", e);
+        }
     }
     @Transactional(readOnly = true)
     public void updateClient(Long id, clients clientDa){

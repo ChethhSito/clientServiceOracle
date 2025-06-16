@@ -19,11 +19,10 @@ document.getElementById('clienteForm').addEventListener('submit', function(event
         body: JSON.stringify(cliente)
     }).then(response => {
         if (response.ok) {
-            
-            alert("Cliente agregado correctamente");
+            Swal.fire('Cliente agregado correctamente', '', 'success');
             // Opcional: limpiar formulario o redirigir
         } else {
-            alert("Error al agregar cliente");
+            Swal.fire('Error al agregar', 'No se pudo agregar el cliente', 'error');
         }
     }).catch(error => {
     console.error("Error al agregar cliente:", error);

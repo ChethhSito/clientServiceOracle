@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </tr>
             `;
         } catch (err) {
-            alert(err.message);
+            Swal.fire('Error al buscar', err.message, 'error');
             tablaCont.style.display = "none";
             tbody.innerHTML = "";
             clienteEncontrado = null;
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (resDir.ok) {
                 const direcciones = await resDir.json();
                 if (direcciones.length > 0) {
-                    alert("No se puede eliminar: el cliente tiene direcciones registradas.");
+                    Swal.fire("No se puede eliminar", "El cliente tiene direcciones registradas.", "error");
                     return;
                 }
             }
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!res.ok) throw new Error("Error al eliminar el cliente");
 
-            alert("Cliente eliminado correctamente.");
+            Swal.fire("Cliente eliminado", "", "success");
             inputID.value = "";
             tablaCont.style.display = "none";
             tbody.innerHTML = "";

@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   btnRegistrarId.addEventListener('click', async function () {
     if (inputId.value.trim() === '') {
-      alert("Ingrese un ID de cliente válido");
+      Swal.fire('Error', 'Ingrese un ID de cliente válido', 'error');
       return;
     }
 
@@ -50,8 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .catch(error => {
         formulario.style.display = 'none';
-        console.error('Error al obtener el cliente:', error);
-        alert('Error al obtener el cliente: ' + error.message);
+        Swal.fire('No existe ese Id', error.message, 'error');
       });
   });
 
@@ -77,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then(response => {
       if (response.ok) {
-        alert("Cliente actualizado correctamente");
+        Swal.fire('Cliente agregado correctamente', '', 'success');
         formulario.reset();
         formulario.style.display = 'none';
         inputId.value = "";
@@ -86,8 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
     .catch(error => {
-      console.error("Error al actualizar cliente:", error);
-      alert("Error del servidor: " + error.message);
+      Swal.fire('Error al actualizar', error.message, 'error');
     });
   });
 });
